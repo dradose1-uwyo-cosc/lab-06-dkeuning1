@@ -1,13 +1,10 @@
-# Your Name Here
+# Danny Keuning
 # UWYO COSC 1010
-# Submission Date
+# 10/15/2024
 # Lab 06
-# Lab Section: 
+# Lab Section: 11
 # Sources, people worked with, help given to: 
-# your
-# comments
-# here
-
+# Used https://realpython.com/sort-python-dictionary/ to figure out how to sort items alphabetically in a dictionary
 
 random_string = """
 jppamiqxegokaizvkyawwurhewtcxohryzptznyuedhhmawpic
@@ -82,19 +79,33 @@ print(len(random_string)) # Print out the size for reference
 
 #Load all the elements into a dictionary
 #Will need to first declare a dictionary 
-
 # Output: each letter and its corresponding occurrence in alphabetical order
+
+dictionary = {}
+
+for letter in random_string:
+    dictionary[letter] = random_string.count(letter)
+
+dictionary = sorted(dictionary.items())
+
+for key, value in dictionary:
+    print(f"{key} occured {value} times.")
 
 print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+most_occurred = "k"
+least_occurred = "n"
 
-print(f"The letter that occurred the most is {most_occurred}")
+print(f"The letter that occurred the most is {most_occurred}.")
 print("*"*75)
 # Output which letter occurred the least 
-print(f"The letter that occurred the most is {least_occurred}")
+print(f"The letter that occurred the least is {least_occurred}.")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+for key, value in dictionary:
+    value = value/2500*100
+    print(f"{key} is %{value: .2f} of the total.")
+    
+
